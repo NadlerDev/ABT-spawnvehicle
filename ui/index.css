@@ -1,0 +1,222 @@
+@font-face {
+    font-family: andreasG;
+    src: url("/ui/fonts/Andreas.ttf");
+}
+
+@font-face {
+    font-family: heavyrustG;
+    src: url("/ui/fonts/HEAVYRUST.ttf");
+}
+
+@font-face {
+    font-family: titleG;
+    src: url("/ui/fonts/big_noodle_titling.ttf");
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    background: none !important;
+}
+
+/* עבור דפדפן Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: .7vh; /* רוחב המוט של הגלילה */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(34, 34, 34, 0.474); /* צבע הרקע למסלול הגלילה */
+    border-radius: 1vh; /* מעוגל למסלול */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00ffbb, #1f1f1f); /* צבע הגלילה (החלק שניתן להזיז) */
+    border-radius: 1vh; /* מעוגל לגלילה */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #03b284, #1f1f1f); /* צבע גלילה בעת ריחוף */
+}
+
+
+::placeholder {
+    color: rgba(166, 166, 166, 0.474);
+    text-shadow: rgba(255, 255, 255, 0) 0 0 0;
+}
+
+:root {
+    --bold: 'andreasG';
+    --print: 'heavyrustG';
+    --title: 'titleG';
+}
+
+.line {
+    width: auto;
+    height: .3vh;
+    background-color: wheat;
+    border-radius: 1vh;
+    box-shadow: 0 0 6vh 1vh black;
+}
+
+.content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 55%;
+    border-radius: 2vh;
+    background: linear-gradient(rgb(28, 28, 28), #292828);
+    box-shadow: 0 0 4vh -1vh black;
+    border: solid .2vh rgb(60, 60, 60);
+}
+
+.container h1 {
+    font-family: var(--title);
+    font-size: 3.5vh;
+    letter-spacing: .3vh;
+    text-shadow: white 0 0 5vh;
+    color: white;
+}
+
+.container input {
+    outline: none;
+    border: none;
+    width: 18vh;
+    height: 4vh;
+    padding: 1vh;
+    border-radius: .5vh;
+    background-color: #262626;
+    box-shadow: 0 0 4vh -1vh black;
+    color: white;
+    font-family: var(--title);
+    font-size: 1.7vh;
+    margin: 1vh;
+    text-shadow: rgba(255, 255, 255, 0.522) 0 0 1vh;
+    transition: all .3s;
+    border-bottom: solid .5vh wheat;
+
+}
+
+.container input:hover {
+    box-shadow: 0 0 4vh -1vh rgb(54, 54, 54);
+}
+
+.container input:focus {
+    transform: scale(105%);
+}
+
+.container span {
+    font-family: var(--title);
+    color: #ff6a6a;
+    font-size: 1.5vh;
+    letter-spacing: .2vh;
+    margin: 1vh;
+}
+
+.container button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 20vh;
+    height: 5vh;
+    padding: .5vh;
+    border-radius: .5vh;
+    background-color: #3d3d3d;
+    box-shadow: 0 0 4vh -1vh black;
+    color: white;
+    font-family: var(--title);
+    font-size: 1.9vh;
+    margin: 1vh;
+    text-shadow: rgba(255, 255, 255, 0.718) 0 0 2.5vh;
+    border-bottom: solid .2vh rgba(255, 255, 255, 0.482);
+    transition: all .3s;
+}
+
+.container button:hover {
+    background-color: #1e1e1e;
+}
+
+.history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.history p {
+    color: rgb(126, 126, 126);
+    font-family: var(--title);
+}
+
+.warp-list {
+    display: flex;
+    justify-content: center;
+    width: 25vh;
+    height: 37vh;
+    border-radius: .3vh;
+    background: linear-gradient(rgba(34, 34, 34, 0.68), #181818c8);
+    overflow: auto;
+}
+
+.warp-list button {
+    width: 3vh;
+    height: 3vh;
+    font-size: 2vh;
+}
+
+.history-table {
+    width: 100%;
+    height: 1vh;
+    border-collapse: separate;
+    border-spacing: 0;
+    vertical-align: top;
+    color: white;
+    font-family: var(--title);
+}
+
+.history-table th,
+.history-table td {
+    padding: 1vh;
+    text-align: center;
+}
+
+.history-table th {
+    background-color: #17161678;
+    color: wheat;
+    font-size: 2vh;
+    text-shadow: rgba(255, 255, 255, 0.522) 0 0 1vh;
+    border-bottom: 0.2vh solid rgba(255, 255, 255, 0.2);
+}
+
+.history-table td {
+    background-color: #26262600;
+    font-size: 1.7vh;
+    border-bottom: 0.1vh solid rgba(255, 255, 255, 0.2);
+    /* Border only at the bottom */
+}
+
+.history-table tr:last-child td {
+    border-bottom: none;
+}
