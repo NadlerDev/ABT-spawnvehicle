@@ -51,7 +51,7 @@
 
         $(document).ready(function () {
             window.OpenHistory = function () {
-                $.post('http://spawn_vehicle/requestHistory', JSON.stringify({}), function (history) {
+                $.post('http://abt-spawnvehicle/requestHistory', JSON.stringify({}), function (history) {
                     $("#historyBody").empty();
                     history.forEach(function (vehicle) {
                         $("#historyBody").append(`
@@ -71,7 +71,7 @@
             $('#spawnButton').click(function () {
                 var model = $('#modelInput').val();
                 if (model) {
-                    $.post('http://spawn_vehicle/spawnClick', JSON.stringify({
+                    $.post('http://abt-spawnvehicle/spawnClick', JSON.stringify({
                         model: model
                     }), function (result) {
                         if (result === 'ok') {
@@ -87,7 +87,7 @@
             });
 
             window.spawnAgain = function (model) {
-                $.post('http://spawn_vehicle/spawnClick', JSON.stringify({
+                $.post('http://abt-spawnvehicle/spawnClick', JSON.stringify({
                     model: model
                 }), function (result) {
                     if (result === 'ok') {
@@ -103,12 +103,12 @@
 
             document.onkeyup = function (data) {
                 if (data.key == "Escape") {
-                    $.post(`http://spawn_vehicle/closeUI`);
+                    $.post(`http://abt-spawnvehicle/closeUI`);
                 }
             }
 
             function closeUI() {
-                $.post('http://spawn_vehicle/closeUI', JSON.stringify({}));
+                $.post('http://abt-spawnvehicle/closeUI', JSON.stringify({}));
             }
         });
     </script>
